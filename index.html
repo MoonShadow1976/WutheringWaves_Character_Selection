@@ -435,7 +435,7 @@
                     '最花钱', '一见钟情', '爱过', '影响最深',
                     '最佳演出', '最佳剧情', '最佳特效', '扫码制作'
                 ],
-                editTooltip: "双击编辑标题"
+                editTooltip: "点击编辑标题"
             },
             en: {
                 title: "WUWA Character Survey",
@@ -453,7 +453,7 @@
                     'Most Spent', 'Love at First Sight', 'Loved', 'Most Influential',
                     'Best Performance', 'Best Story', 'Best Effects', 'Make Yours'
                 ],
-                editTooltip: "Double-click to edit title"
+                editTooltip: "Click to edit title"
             }
         };
 
@@ -550,7 +550,7 @@
                 
                 // 添加标题编辑事件
                 const titleElement = gridItem.querySelector('.grid-title');
-                titleElement.addEventListener('dblclick', function() {
+                titleElement.addEventListener('click', function() {
                     editTitle(this);
                 });
                 
@@ -580,7 +580,7 @@
                 }
                 
                 // 重新绑定编辑事件
-                title.addEventListener('dblclick', function() {
+                title.addEventListener('click', function() {
                     editTitle(this);
                 });
             });
@@ -635,7 +635,7 @@
                 titleElement.classList.remove('editing');
                 
                 // 重新绑定编辑事件
-                titleElement.addEventListener('dblclick', function() {
+                titleElement.addEventListener('click', function() {
                     editTitle(this);
                 });
             }
@@ -651,7 +651,7 @@
                     titleElement.classList.remove('editing');
                     
                     // 重新绑定编辑事件
-                    titleElement.addEventListener('dblclick', function() {
+                    titleElement.addEventListener('click', function() {
                         editTitle(this);
                     });
                 }

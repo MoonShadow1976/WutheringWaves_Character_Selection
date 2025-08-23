@@ -39,7 +39,7 @@ An interactive web application that allows fans of the popular game "Wuthering W
    - Click on any grid cell (except "Join Us") to choose a character / 点击任意网格单元格（"加入我们"除外）选择角色
 3. **Customize Titles (Optional)** / **自定义标题（可选）**
 
-   - Double-click on any title to edit it / 双击任意标题进行编辑
+   - Click on any title to edit it / 点击任意标题进行编辑
 4. **Generate Image** / **生成图片**
 
    - Click the "Generate Image" button to create your character selection card / 点击"生成图片"按钮创建角色选择卡
