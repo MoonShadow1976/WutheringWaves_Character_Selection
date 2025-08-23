@@ -102,6 +102,31 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 4px;
+            padding: 5px;
+        }
+        
+        .grid-title:hover {
+            background-color: #f0f8ff;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+        
+        .grid-title.editing {
+            background-color: #e3f2fd;
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.7);
+        }
+        
+        .title-input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-size: 1rem;
+            text-align: center;
+            font-weight: bold;
+            color: #2c3e50;
+            outline: none;
         }
         
         .character-container {
@@ -209,14 +234,17 @@
         .button-container {
             text-align: center;
             margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
         
-        .generate-btn {
+        .generate-btn, .reset-btn {
             background-color: #3498db;
             color: white;
             border: none;
-            padding: 15px 40px;
-            font-size: 1.2rem;
+            padding: 15px 30px;
+            font-size: 1.1rem;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -225,6 +253,15 @@
         
         .generate-btn:hover {
             background-color: #2980b9;
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        
+        .reset-btn {
+            background-color: #e74c3c;
+        }
+        
+        .reset-btn:hover {
+            background-color: #c0392b;
             box-shadow: 0 6px 8px rgba(0,0,0,0.15);
         }
         
@@ -277,6 +314,10 @@
             .grid-title {
                 font-size: 1rem;
             }
+            
+            .button-container {
+                flex-direction: column;
+            }
         }
         
         .loading {
@@ -311,6 +352,20 @@
             max-width: 100%;
             height: auto;
         }
+        
+        .edit-tooltip {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            font-size: 0.7rem;
+            color: #7f8c8d;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .grid-title:hover .edit-tooltip {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -331,6 +386,7 @@
         
         <div class="button-container">
             <button class="generate-btn" id="generateBtn" data-i18n="generateBtn">生成图片</button>
+            <button class="reset-btn" id="resetBtn" data-i18n="resetBtn">重置标题</button>
         </div>
         
         <div class="result-container" id="resultContainer">
@@ -367,6 +423,7 @@
                 title: "鸣潮 角色大调查",
                 description: "选择你心目中的最佳角色，生成专属角色卡片",
                 generateBtn: "生成图片",
+                resetBtn: "重置标题",
                 resultTitle: "你的角色选择结果",
                 downloadBtn: "下载图片",
                 footer: "© 2025 鸣潮 角色大调查 | 生成你的专属角色卡片",
@@ -377,12 +434,14 @@
                     '最喜欢', '热恋中', '最熟悉', '最长情',
                     '最花钱', '一见钟情', '爱过', '影响最深',
                     '最佳演出', '最佳剧情', '最佳特效', '扫码制作'
-                ]
+                ],
+                editTooltip: "双击编辑标题"
             },
             en: {
                 title: "WUWA Character Survey",
                 description: "Select your favorite characters and generate a character card",
                 generateBtn: "Generate Image",
+                resetBtn: "Reset Titles",
                 resultTitle: "Your Character Selection Result",
                 downloadBtn: "Download Image",
                 footer: "© 2025 Wuthering Waves Character Survey | Generate your character card",
@@ -393,7 +452,8 @@
                     'Favorite', 'In Love', 'Most Familiar', 'Most Loyal',
                     'Most Spent', 'Love at First Sight', 'Loved', 'Most Influential',
                     'Best Performance', 'Best Story', 'Best Effects', 'Make Yours'
-                ]
+                ],
+                editTooltip: "Double-click to edit title"
             }
         };
 
@@ -401,6 +461,7 @@
         let currentLang = 'zh';
         let currentCellId = null;
         let characters = [];
+        let editedTitles = {}; // 存储用户编辑的标题
         
         document.addEventListener('DOMContentLoaded', function() {
             // 初始化语言切换
@@ -479,12 +540,21 @@
                 const gridItem = document.createElement('div');
                 gridItem.className = 'grid-item';
                 gridItem.innerHTML = `
-                    <div class="grid-title" data-grid-index="${i}">${i18nResources[currentLang].gridTitles[i]}</div>
+                    <div class="grid-title" data-grid-index="${i}">
+                        ${i18nResources[currentLang].gridTitles[i]}
+                        <span class="edit-tooltip">${i18nResources[currentLang].editTooltip}</span>
+                    </div>
                     <div class="character-container empty" id="cell-${i}" data-placeholder="${i18nResources[currentLang].placeholder}"></div>
                 `;
                 characterGrid.appendChild(gridItem);
                 
-                // 添加点击事件（除了"扫码制作"格子）
+                // 添加标题编辑事件
+                const titleElement = gridItem.querySelector('.grid-title');
+                titleElement.addEventListener('dblclick', function() {
+                    editTitle(this);
+                });
+                
+                // 添加角色选择点击事件（除了"扫码制作"格子）
                 if (i !== 11) {
                     const container = gridItem.querySelector('.character-container');
                     container.addEventListener('click', function() {
@@ -500,13 +570,103 @@
         
         function updateGridTitles() {
             document.querySelectorAll('.grid-title').forEach((title, index) => {
-                title.textContent = i18nResources[currentLang].gridTitles[index];
+                // 如果用户编辑过这个标题，保持编辑状态
+                if (editedTitles[currentLang] && editedTitles[currentLang][index] !== undefined) {
+                    title.innerHTML = editedTitles[currentLang][index] + 
+                        `<span class="edit-tooltip">${i18nResources[currentLang].editTooltip}</span>`;
+                } else {
+                    title.innerHTML = i18nResources[currentLang].gridTitles[index] + 
+                        `<span class="edit-tooltip">${i18nResources[currentLang].editTooltip}</span>`;
+                }
+                
+                // 重新绑定编辑事件
+                title.addEventListener('dblclick', function() {
+                    editTitle(this);
+                });
             });
             
             // 更新占位符文本
             document.querySelectorAll('.character-container.empty').forEach(container => {
                 container.setAttribute('data-placeholder', i18nResources[currentLang].placeholder);
             });
+        }
+        
+        function editTitle(titleElement) {
+            const index = parseInt(titleElement.getAttribute('data-grid-index'));
+            const currentText = titleElement.textContent.replace(i18nResources[currentLang].editTooltip, '').trim();
+            
+            // 创建输入框
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = currentText;
+            input.className = 'title-input';
+            
+            // 替换标题文本为输入框
+            titleElement.innerHTML = '';
+            titleElement.appendChild(input);
+            titleElement.classList.add('editing');
+            
+            // 聚焦输入框
+            input.focus();
+            input.select();
+            
+            // 保存编辑内容
+            function saveEdit() {
+                const newText = input.value.trim();
+                if (newText) {
+                    // 保存编辑的标题
+                    if (!editedTitles[currentLang]) {
+                        editedTitles[currentLang] = {};
+                    }
+                    editedTitles[currentLang][index] = newText;
+                    
+                    // 更新显示
+                    titleElement.innerHTML = newText + 
+                        `<span class="edit-tooltip">${i18nResources[currentLang].editTooltip}</span>`;
+                } else {
+                    // 如果输入为空，恢复默认标题
+                    if (editedTitles[currentLang] && editedTitles[currentLang][index] !== undefined) {
+                        delete editedTitles[currentLang][index];
+                    }
+                    titleElement.innerHTML = i18nResources[currentLang].gridTitles[index] + 
+                        `<span class="edit-tooltip">${i18nResources[currentLang].editTooltip}</span>`;
+                }
+                
+                titleElement.classList.remove('editing');
+                
+                // 重新绑定编辑事件
+                titleElement.addEventListener('dblclick', function() {
+                    editTitle(this);
+                });
+            }
+            
+            // 按下回车保存
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    saveEdit();
+                } else if (e.key === 'Escape') {
+                    // 取消编辑
+                    titleElement.innerHTML = currentText + 
+                        `<span class="edit-tooltip">${i18nResources[currentLang].editTooltip}</span>`;
+                    titleElement.classList.remove('editing');
+                    
+                    // 重新绑定编辑事件
+                    titleElement.addEventListener('dblclick', function() {
+                        editTitle(this);
+                    });
+                }
+            });
+            
+            // 失去焦点时保存
+            input.addEventListener('blur', saveEdit);
+        }
+        
+        function resetTitles() {
+            // 清除所有编辑的标题
+            editedTitles[currentLang] = {};
+            
+            // 恢复默认标题
+            updateGridTitles();
         }
         
         function initQRCode() {
@@ -570,6 +730,11 @@
             // 生成图片
             document.getElementById('generateBtn').addEventListener('click', function() {
                 generateImage();
+            });
+            
+            // 重置标题
+            document.getElementById('resetBtn').addEventListener('click', function() {
+                resetTitles();
             });
         }
         
