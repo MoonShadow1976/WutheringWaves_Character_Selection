@@ -299,6 +299,18 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        
+        .qrcode-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .qrcode-container canvas {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -309,7 +321,7 @@
         </div>
         
         <header>
-            <h1 data-i18n="title">WUWA 角色大调查</h1>
+            <h1 data-i18n="title">鸣潮角色大调查</h1>
             <p class="description" data-i18n="description">选择你心目中的最佳角色，生成专属角色卡片</p>
         </header>
         
@@ -329,7 +341,7 @@
         </div>
         
         <footer>
-            <p data-i18n="footer">© 2023 Wuthering Waves 角色大调查 | 生成你的专属角色卡片</p>
+            <p data-i18n="footer">© 2025 鸣潮 角色大调查 | 生成你的专属角色卡片</p>
         </footer>
     </div>
 
@@ -352,19 +364,19 @@
         // 多语言资源
         const i18nResources = {
             zh: {
-                title: "WUWA 角色大调查",
+                title: "鸣潮 角色大调查",
                 description: "选择你心目中的最佳角色，生成专属角色卡片",
                 generateBtn: "生成图片",
                 resultTitle: "你的角色选择结果",
                 downloadBtn: "下载图片",
-                footer: "© 2023 Wuthering Waves 角色大调查 | 生成你的专属角色卡片",
-                modalTitle: "选择角色",
+                footer: "© 2025 鸣潮 角色大调查 | 生成你的专属角色卡片",
+                modalTitle: "选择角色(从github加载图片)",
                 placeholder: "点击选择角色",
                 emptyOption: "不选择",
                 gridTitles: [
                     '最喜欢', '热恋中', '最熟悉', '最长情',
                     '最花钱', '一见钟情', '爱过', '影响最深',
-                    '最佳演出', '最佳剧情', '最佳特效', '加入我们'
+                    '最佳演出', '最佳剧情', '最佳特效', '扫码制作'
                 ]
             },
             en: {
@@ -373,14 +385,14 @@
                 generateBtn: "Generate Image",
                 resultTitle: "Your Character Selection Result",
                 downloadBtn: "Download Image",
-                footer: "© 2023 Wuthering Waves Character Survey | Generate your character card",
-                modalTitle: "Select Character",
+                footer: "© 2025 Wuthering Waves Character Survey | Generate your character card",
+                modalTitle: "Select Character (load img from github)",
                 placeholder: "Click to select character",
                 emptyOption: "Don't select",
                 gridTitles: [
                     'Favorite', 'In Love', 'Most Familiar', 'Most Loyal',
                     'Most Spent', 'Love at First Sight', 'Loved', 'Most Influential',
-                    'Best Performance', 'Best Story', 'Best Effects', 'Join Us'
+                    'Best Performance', 'Best Story', 'Best Effects', 'Make Yours'
                 ]
             }
         };
@@ -396,9 +408,6 @@
             
             // 初始化表格
             initGrid();
-            
-            // 初始化加入我们的二维码
-            initQRCode();
             
             // 加载角色数据
             loadCharacterData();
@@ -457,6 +466,9 @@
             
             // 更新表格标题
             updateGridTitles();
+            
+            // 重新初始化二维码（语言切换后）
+            initQRCode();
         }
         
         function initGrid() {
@@ -472,7 +484,7 @@
                 `;
                 characterGrid.appendChild(gridItem);
                 
-                // 添加点击事件（除了"加入我们"格子）
+                // 添加点击事件（除了"扫码制作"格子）
                 if (i !== 11) {
                     const container = gridItem.querySelector('.character-container');
                     container.addEventListener('click', function() {
@@ -481,6 +493,9 @@
                     });
                 }
             }
+            
+            // 初始化二维码
+            initQRCode();
         }
         
         function updateGridTitles() {
@@ -496,22 +511,33 @@
         
         function initQRCode() {
             const joinUsCell = document.getElementById('cell-11');
-            joinUsCell.classList.remove('empty');
-            joinUsCell.innerHTML = '<div id="qrcode"></div>';
+            if (!joinUsCell) return;
             
-            // 生成GitHub仓库二维码
-            const githubRepoUrl = window.location.href;
-            QRCode.toCanvas(document.getElementById('qrcode'), githubRepoUrl, {
-                width: 120,
-                height: 120,
-                margin: 1,
-                color: {
-                    dark: '#2c3e50',
-                    light: '#ffffff'
+            joinUsCell.classList.remove('empty');
+            joinUsCell.innerHTML = '<div class="qrcode-container"><canvas id="qrcode"></canvas></div>';
+            
+            // 生成GitHub仓库二维码 - 使用setTimeout确保DOM已更新
+            setTimeout(() => {
+                const githubRepoUrl = "https://moonshadow1976.github.io/WutheringWaves_Character_Selection/";
+                const canvasElement = document.getElementById('qrcode');
+                
+                if (canvasElement) {
+                    try {
+                        QRCode.toCanvas(canvasElement, githubRepoUrl, {
+                            width: 120,
+                            margin: 1,
+                            color: {
+                                dark: '#2c3e50',
+                                light: '#ffffff'
+                            }
+                        }, function(error) {
+                            if (error) console.error('QRCode error:', error);
+                        });
+                    } catch (e) {
+                        console.error('QRCode initialization error:', e);
+                    }
                 }
-            }, function(error) {
-                if (error) console.error(error);
-            });
+            }, 100);
         }
         
         function loadCharacterData() {
@@ -543,28 +569,7 @@
             
             // 生成图片
             document.getElementById('generateBtn').addEventListener('click', function() {
-                // 使用html2canvas生成图片
-                html2canvas(document.getElementById('characterGrid'), {
-                    backgroundColor: '#ffffff',
-                    scale: 2
-                }).then(canvas => {
-                    const resultCanvas = document.getElementById('resultCanvas');
-                    resultCanvas.width = canvas.width;
-                    resultCanvas.height = canvas.height;
-                    const ctx = resultCanvas.getContext('2d');
-                    ctx.drawImage(canvas, 0, 0);
-                    
-                    // 显示结果区域
-                    document.getElementById('resultContainer').style.display = 'block';
-                    
-                    // 设置下载链接
-                    const downloadBtn = document.getElementById('downloadBtn');
-                    downloadBtn.href = resultCanvas.toDataURL('image/png');
-                    downloadBtn.download = 'wuwa-character-selection.png';
-                    
-                    // 滚动到结果区域
-                    document.getElementById('resultContainer').scrollIntoView({ behavior: 'smooth' });
-                });
+                generateImage();
             });
         }
         
@@ -587,14 +592,33 @@
             characters.forEach(character => {
                 const characterOption = document.createElement('div');
                 characterOption.className = 'character-option';
-                characterOption.innerHTML = `
-                    <img src="${character.url}" alt="${character[currentLang] || character.en}" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%23f0f0f0%22%2F%3E%3Ctext%20x%3D%2240%22%20y%3D%2240%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20alignment-baseline%3D%22middle%22%20fill%3D%22%23999%22%3E${character[currentLang] || character.en}%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                    <div class="character-name">${character[currentLang] || character.en}</div>
-                `;
+                
+                // 创建图片并设置crossOrigin属性以解决CORS问题
+                const img = document.createElement('img');
+                img.src = character.url;
+                img.alt = character[currentLang] || character.en;
+                img.crossOrigin = "Anonymous"; // 解决跨域问题
+                img.onerror = function() {
+                    this.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
+                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+                            <rect width="80" height="80" fill="#f0f0f0"/>
+                            <text x="40" y="40" font-size="12" text-anchor="middle" alignment-baseline="middle" fill="#999">${character[currentLang] || character.en}</text>
+                        </svg>
+                    `)}`;
+                };
+                
+                const nameDiv = document.createElement('div');
+                nameDiv.className = 'character-name';
+                nameDiv.textContent = character[currentLang] || character.en;
+                
+                characterOption.appendChild(img);
+                characterOption.appendChild(nameDiv);
+                
                 characterOption.addEventListener('click', function() {
                     selectCharacter(character);
                     closeModal();
                 });
+                
                 charactersList.appendChild(characterOption);
             });
             
@@ -622,13 +646,60 @@
         function selectCharacter(character) {
             const cell = document.getElementById(currentCellId);
             cell.classList.remove('empty');
-            cell.innerHTML = `<img src="${character.url}" alt="${character[currentLang] || character.en}" class="character-image" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22120%22%20height%3D%22120%22%20viewBox%3D%220%200%20120%20120%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23f0f0f0%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2260%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20alignment-baseline%3D%22middle%22%20fill%3D%22%23999%22%3E${character[currentLang] || character.en}%3C%2Ftext%3E%3C%2Fsvg%3E'">`;
+            
+            // 创建图片并设置crossOrigin属性以解决CORS问题
+            const img = document.createElement('img');
+            img.src = character.url;
+            img.alt = character[currentLang] || character.en;
+            img.className = 'character-image';
+            img.crossOrigin = "Anonymous"; // 解决跨域问题
+            img.onerror = function() {
+                this.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
+                    <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+                        <rect width="120" height="120" fill="#f0f0f0"/>
+                        <text x="60" y="60" font-size="14" text-anchor="middle" alignment-baseline="middle" fill="#999">${character[currentLang] || character.en}</text>
+                    </svg>
+                `)}`;
+            };
+            
+            cell.innerHTML = '';
+            cell.appendChild(img);
         }
         
         function clearCharacter() {
             const cell = document.getElementById(currentCellId);
             cell.classList.add('empty');
             cell.innerHTML = '';
+        }
+        
+        function generateImage() {
+            // 使用html2canvas生成图片
+            html2canvas(document.getElementById('characterGrid'), {
+                backgroundColor: '#ffffff',
+                scale: 2,
+                useCORS: true, // 允许加载跨域图片
+                allowTaint: true // 允许加载跨域图片
+            }).then(canvas => {
+                const resultCanvas = document.getElementById('resultCanvas');
+                resultCanvas.width = canvas.width;
+                resultCanvas.height = canvas.height;
+                const ctx = resultCanvas.getContext('2d');
+                ctx.drawImage(canvas, 0, 0);
+                
+                // 显示结果区域
+                document.getElementById('resultContainer').style.display = 'block';
+                
+                // 设置下载链接
+                const downloadBtn = document.getElementById('downloadBtn');
+                downloadBtn.href = resultCanvas.toDataURL('image/png');
+                downloadBtn.download = 'wuwa-character-selection.png';
+                
+                // 滚动到结果区域
+                document.getElementById('resultContainer').scrollIntoView({ behavior: 'smooth' });
+            }).catch(error => {
+                console.error('Error generating image:', error);
+                alert('生成图片时出错，请确保所有图片已正确加载。');
+            });
         }
     </script>
 </body>
