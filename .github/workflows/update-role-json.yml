@@ -1,0 +1,32 @@
+name: Update Role JSON
+
+on:
+  push:
+    paths:
+      - 'id2role.json'
+  workflow_dispatch:
+
+jobs:
+  update-role-json:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+        
+    - name: Generate role.json from id2role.json
+      run: |
+        python .github/scripts/generate_role_json.py
+        
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add role.json
+        git diff --cached --quiet || git commit -m "Update role.json from id2role.json"
+        git push

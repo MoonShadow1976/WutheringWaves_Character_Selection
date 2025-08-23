@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wuthering Waves Character Selection</title>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            background-color: white;
+            max-width: 1000px;
+            width: 100%;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .lang-btn {
+            background: none;
+            border: 1px solid #3498db;
+            color: #3498db;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn.active {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-top: 10px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .description {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            margin-bottom: 40px;
+            border: 2px solid #2c3e50;
+            background-color: #2c3e50;
+        }
+        
+        .grid-item {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .grid-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-weight: bold;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .character-container {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .character-container.empty::after {
+            content: attr(data-placeholder);
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+        
+        .character-container:hover {
+            border-color: #3498db;
+            background-color: #f9f9f9;
+        }
+        
+        .character-image {
+            max-width: 100%;
+            max-height: 120px;
+            object-fit: contain;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .close-modal {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #7f8c8d;
+        }
+        
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 15px;
+        }
+        
+        .character-option {
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        
+        .character-option:hover {
+            transform: scale(1.05);
+        }
+        
+        .character-option img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .character-option:hover img {
+            border-color: #3498db;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .character-name {
+            margin-top: 5px;
+            font-size: 0.8rem;
+            color: #2c3e50;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .generate-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .generate-btn:hover {
+            background-color: #2980b9;
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        
+        .result-container {
+            margin-top: 40px;
+            text-align: center;
+            display: none;
+        }
+        
+        #resultCanvas {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: #2ecc71;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .download-btn:hover {
+            background-color: #27ae60;
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .grid-title {
+                font-size: 1rem;
+            }
+        }
+        
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="zh">中文</button>
+            <button class="lang-btn" data-lang="en">English</button>
+        </div>
+        
+        <header>
+            <h1 data-i18n="title">WUWA 角色大调查</h1>
+            <p class="description" data-i18n="description">选择你心目中的最佳角色，生成专属角色卡片</p>
+        </header>
+        
+        <div class="grid-container" id="characterGrid">
+            <!-- 格子将由JavaScript动态生成 -->
+        </div>
+        
+        <div class="button-container">
+            <button class="generate-btn" id="generateBtn" data-i18n="generateBtn">生成图片</button>
+        </div>
+        
+        <div class="result-container" id="resultContainer">
+            <h2 data-i18n="resultTitle">你的角色选择结果</h2>
+            <canvas id="resultCanvas"></canvas>
+            <br>
+            <a href="#" class="download-btn" id="downloadBtn" data-i18n="downloadBtn">下载图片</a>
+        </div>
+        
+        <footer>
+            <p data-i18n="footer">© 2023 Wuthering Waves 角色大调查 | 生成你的专属角色卡片</p>
+        </footer>
+    </div>
+
+    <!-- 角色选择模态框 -->
+    <div class="modal" id="characterModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-i18n="modalTitle">选择角色</h2>
+                <span class="close-modal" id="closeModal">&times;</span>
+            </div>
+            <div class="characters-grid" id="charactersList">
+                <div class="loading">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 多语言资源
+        const i18nResources = {
+            zh: {
+                title: "WUWA 角色大调查",
+                description: "选择你心目中的最佳角色，生成专属角色卡片",
+                generateBtn: "生成图片",
+                resultTitle: "你的角色选择结果",
+                downloadBtn: "下载图片",
+                footer: "© 2023 Wuthering Waves 角色大调查 | 生成你的专属角色卡片",
+                modalTitle: "选择角色",
+                placeholder: "点击选择角色",
+                emptyOption: "不选择",
+                gridTitles: [
+                    '最喜欢', '热恋中', '最熟悉', '最长情',
+                    '最花钱', '一见钟情', '爱过', '影响最深',
+                    '最佳演出', '最佳剧情', '最佳特效', '加入我们'
+                ]
+            },
+            en: {
+                title: "WUWA Character Survey",
+                description: "Select your favorite characters and generate a character card",
+                generateBtn: "Generate Image",
+                resultTitle: "Your Character Selection Result",
+                downloadBtn: "Download Image",
+                footer: "© 2023 Wuthering Waves Character Survey | Generate your character card",
+                modalTitle: "Select Character",
+                placeholder: "Click to select character",
+                emptyOption: "Don't select",
+                gridTitles: [
+                    'Favorite', 'In Love', 'Most Familiar', 'Most Loyal',
+                    'Most Spent', 'Love at First Sight', 'Loved', 'Most Influential',
+                    'Best Performance', 'Best Story', 'Best Effects', 'Join Us'
+                ]
+            }
+        };
+
+        // 当前语言
+        let currentLang = 'zh';
+        let currentCellId = null;
+        let characters = [];
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化语言切换
+            initLanguageSwitcher();
+            
+            // 初始化表格
+            initGrid();
+            
+            // 初始化加入我们的二维码
+            initQRCode();
+            
+            // 加载角色数据
+            loadCharacterData();
+            
+            // 绑定事件
+            bindEvents();
+        });
+        
+        function initLanguageSwitcher() {
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    if (lang !== currentLang) {
+                        switchLanguage(lang);
+                    }
+                });
+            });
+            
+            // 从本地存储获取语言偏好
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang && i18nResources[savedLang]) {
+                switchLanguage(savedLang);
+            }
+        }
+        
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('preferredLang', lang);
+            
+            // 更新语言按钮状态
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // 更新界面文本
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (i18nResources[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = i18nResources[lang][key];
+                    } else {
+                        element.textContent = i18nResources[lang][key];
+                    }
+                }
+            });
+            
+            // 更新占位符文本
+            document.querySelectorAll('.character-container.empty').forEach(container => {
+                container.setAttribute('data-placeholder', i18nResources[lang].placeholder);
+            });
+            
+            // 更新表格标题
+            updateGridTitles();
+        }
+        
+        function initGrid() {
+            const characterGrid = document.getElementById('characterGrid');
+            characterGrid.innerHTML = '';
+            
+            for (let i = 0; i < 12; i++) {
+                const gridItem = document.createElement('div');
+                gridItem.className = 'grid-item';
+                gridItem.innerHTML = `
+                    <div class="grid-title" data-grid-index="${i}">${i18nResources[currentLang].gridTitles[i]}</div>
+                    <div class="character-container empty" id="cell-${i}" data-placeholder="${i18nResources[currentLang].placeholder}"></div>
+                `;
+                characterGrid.appendChild(gridItem);
+                
+                // 添加点击事件（除了"加入我们"格子）
+                if (i !== 11) {
+                    const container = gridItem.querySelector('.character-container');
+                    container.addEventListener('click', function() {
+                        currentCellId = `cell-${i}`;
+                        openCharacterModal();
+                    });
+                }
+            }
+        }
+        
+        function updateGridTitles() {
+            document.querySelectorAll('.grid-title').forEach((title, index) => {
+                title.textContent = i18nResources[currentLang].gridTitles[index];
+            });
+            
+            // 更新占位符文本
+            document.querySelectorAll('.character-container.empty').forEach(container => {
+                container.setAttribute('data-placeholder', i18nResources[currentLang].placeholder);
+            });
+        }
+        
+        function initQRCode() {
+            const joinUsCell = document.getElementById('cell-11');
+            joinUsCell.classList.remove('empty');
+            joinUsCell.innerHTML = '<div id="qrcode"></div>';
+            
+            // 生成GitHub仓库二维码
+            const githubRepoUrl = window.location.href;
+            QRCode.toCanvas(document.getElementById('qrcode'), githubRepoUrl, {
+                width: 120,
+                height: 120,
+                margin: 1,
+                color: {
+                    dark: '#2c3e50',
+                    light: '#ffffff'
+                }
+            }, function(error) {
+                if (error) console.error(error);
+            });
+        }
+        
+        function loadCharacterData() {
+            fetch('role.json')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 200) {
+                        characters = data.data;
+                    } else {
+                        console.error('Failed to load character data:', data.info);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading role.json:', error);
+                });
+        }
+        
+        function bindEvents() {
+            // 关闭模态框事件
+            document.getElementById('closeModal').addEventListener('click', closeModal);
+            
+            // 点击模态框背景关闭
+            window.addEventListener('click', function(event) {
+                const modal = document.getElementById('characterModal');
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            // 生成图片
+            document.getElementById('generateBtn').addEventListener('click', function() {
+                // 使用html2canvas生成图片
+                html2canvas(document.getElementById('characterGrid'), {
+                    backgroundColor: '#ffffff',
+                    scale: 2
+                }).then(canvas => {
+                    const resultCanvas = document.getElementById('resultCanvas');
+                    resultCanvas.width = canvas.width;
+                    resultCanvas.height = canvas.height;
+                    const ctx = resultCanvas.getContext('2d');
+                    ctx.drawImage(canvas, 0, 0);
+                    
+                    // 显示结果区域
+                    document.getElementById('resultContainer').style.display = 'block';
+                    
+                    // 设置下载链接
+                    const downloadBtn = document.getElementById('downloadBtn');
+                    downloadBtn.href = resultCanvas.toDataURL('image/png');
+                    downloadBtn.download = 'wuwa-character-selection.png';
+                    
+                    // 滚动到结果区域
+                    document.getElementById('resultContainer').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        }
+        
+        function openCharacterModal() {
+            const modal = document.getElementById('characterModal');
+            modal.style.display = 'flex';
+            
+            // 清空角色列表
+            const charactersList = document.getElementById('charactersList');
+            charactersList.innerHTML = '';
+            
+            if (characters.length === 0) {
+                charactersList.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
+                // 如果字符数据尚未加载，等待一下
+                setTimeout(openCharacterModal, 100);
+                return;
+            }
+            
+            // 添加角色选项
+            characters.forEach(character => {
+                const characterOption = document.createElement('div');
+                characterOption.className = 'character-option';
+                characterOption.innerHTML = `
+                    <img src="${character.url}" alt="${character[currentLang] || character.en}" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%23f0f0f0%22%2F%3E%3Ctext%20x%3D%2240%22%20y%3D%2240%22%20font-size%3D%2212%22%20text-anchor%3D%22middle%22%20alignment-baseline%3D%22middle%22%20fill%3D%22%23999%22%3E${character[currentLang] || character.en}%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                    <div class="character-name">${character[currentLang] || character.en}</div>
+                `;
+                characterOption.addEventListener('click', function() {
+                    selectCharacter(character);
+                    closeModal();
+                });
+                charactersList.appendChild(characterOption);
+            });
+            
+            // 添加空白选项
+            const emptyOption = document.createElement('div');
+            emptyOption.className = 'character-option';
+            emptyOption.innerHTML = `
+                <div style="width:80px; height:80px; display:flex; align-items:center; justify-content:center; border:2px dashed #ccc; border-radius:5px; background:#f9f9f9;">
+                    ${i18nResources[currentLang].emptyOption}
+                </div>
+                <div class="character-name">${i18nResources[currentLang].emptyOption}</div>
+            `;
+            emptyOption.addEventListener('click', function() {
+                clearCharacter();
+                closeModal();
+            });
+            charactersList.appendChild(emptyOption);
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('characterModal');
+            modal.style.display = 'none';
+        }
+        
+        function selectCharacter(character) {
+            const cell = document.getElementById(currentCellId);
+            cell.classList.remove('empty');
+            cell.innerHTML = `<img src="${character.url}" alt="${character[currentLang] || character.en}" class="character-image" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22120%22%20height%3D%22120%22%20viewBox%3D%220%200%20120%20120%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23f0f0f0%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2260%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20alignment-baseline%3D%22middle%22%20fill%3D%22%23999%22%3E${character[currentLang] || character.en}%3C%2Ftext%3E%3C%2Fsvg%3E'">`;
+        }
+        
+        function clearCharacter() {
+            const cell = document.getElementById(currentCellId);
+            cell.classList.add('empty');
+            cell.innerHTML = '';
+        }
+    </script>
+</body>
+</html>
