@@ -28,5 +28,5 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add role.json
-        git diff --cached --quiet || git commit -m "Update role.json from id2role.json"
+        git commit -m "Update role.json from id2role.json"
         git push
