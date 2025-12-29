@@ -701,7 +701,7 @@
         }
         
         function loadCharacterData() {
-            fetch('role.json')
+            fetch('src/role.json')
                 .then(response => response.json())
                 .then(data => {
                     if (data.status === 200) {

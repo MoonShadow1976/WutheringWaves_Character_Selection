@@ -4,7 +4,7 @@
   "data": [
     {
       "id": "1406",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1406.png",
+      "url": "src/role/role_pile_1406.png",
       "en": "Male Rover",
       "ko": "남성 방랑자",
       "zh": "男 漂泊者",
@@ -12,7 +12,7 @@
     },
     {
       "id": "1408",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1408.png",
+      "url": "src/role/role_pile_1408.png",
       "en": "Female Rover",
       "ko": "여성 방랑자",
       "zh": "女 漂泊者",
@@ -20,7 +20,7 @@
     },
     {
       "id": "1407",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1407.png",
+      "url": "src/role/role_pile_1407.png",
       "en": "Ciaccona",
       "ko": "샤콘",
       "zh": "夏空",
@@ -28,7 +28,7 @@
     },
     {
       "id": "1608",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1608.png",
+      "url": "src/role/role_pile_1608.png",
       "en": "Phrolova",
       "ko": "플로로",
       "zh": "弗洛洛",
@@ -36,7 +36,7 @@
     },
     {
       "id": "1303",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1303.png",
+      "url": "src/role/role_pile_1303.png",
       "en": "Yuanwu",
       "ko": "연무",
       "zh": "渊武",
@@ -44,7 +44,7 @@
     },
     {
       "id": "1105",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1105.png",
+      "url": "src/role/role_pile_1105.png",
       "en": "Zhezhi",
       "ko": "절지",
       "zh": "折枝",
@@ -52,7 +52,7 @@
     },
     {
       "id": "1410",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1410.png",
+      "url": "src/role/role_pile_1410.png",
       "en": "Iuno",
       "ko": "유노",
       "zh": "尤诺",
@@ -60,7 +60,7 @@
     },
     {
       "id": "1304",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1304.png",
+      "url": "src/role/role_pile_1304.png",
       "en": "Jinhsi",
       "ko": "금희",
       "zh": "今汐",
@@ -68,7 +68,7 @@
     },
     {
       "id": "1507",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1507.png",
+      "url": "src/role/role_pile_1507.png",
       "en": "Zani",
       "ko": "젠니",
       "zh": "赞妮",
@@ -76,7 +76,7 @@
     },
     {
       "id": "1505",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1505.png",
+      "url": "src/role/role_pile_1505.png",
       "en": "Shorekeeper",
       "ko": "파수인",
       "zh": "守岸人",
@@ -84,7 +84,7 @@
     },
     {
       "id": "1205",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1205.png",
+      "url": "src/role/role_pile_1205.png",
       "en": "Changli",
       "ko": "장리",
       "zh": "长离",
@@ -92,7 +92,7 @@
     },
     {
       "id": "1506",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1506.png",
+      "url": "src/role/role_pile_1506.png",
       "en": "Phoebe",
       "ko": "페비",
       "zh": "菲比",
@@ -100,7 +100,7 @@
     },
     {
       "id": "1207",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1207.png",
+      "url": "src/role/role_pile_1207.png",
       "en": "Lupa",
       "ko": "루파",
       "zh": "露帕",
@@ -108,7 +108,7 @@
     },
     {
       "id": "1104",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1104.png",
+      "url": "src/role/role_pile_1104.png",
       "en": "Lingyang",
       "ko": "능양",
       "zh": "凌阳",
@@ -116,7 +116,7 @@
     },
     {
       "id": "1607",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1607.png",
+      "url": "src/role/role_pile_1607.png",
       "en": "Cantarella",
       "ko": "칸타렐라",
       "zh": "坎特蕾拉",
@@ -124,7 +124,7 @@
     },
     {
       "id": "1203",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1203.png",
+      "url": "src/role/role_pile_1203.png",
       "en": "Encore",
       "ko": "앙코",
       "zh": "安可",
@@ -132,7 +132,7 @@
     },
     {
       "id": "1302",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1302.png",
+      "url": "src/role/role_pile_1302.png",
       "en": "Yinlin",
       "ko": "음림",
       "zh": "吟霖",
@@ -140,7 +140,7 @@
     },
     {
       "id": "1405",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1405.png",
+      "url": "src/role/role_pile_1405.png",
       "en": "Jianxin",
       "ko": "감심",
       "zh": "鉴心",
@@ -148,7 +148,7 @@
     },
     {
       "id": "1103",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1103.png",
+      "url": "src/role/role_pile_1103.png",
       "en": "Baizhi",
       "ko": "설지",
       "zh": "白芷",
@@ -156,7 +156,7 @@
     },
     {
       "id": "1306",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1306.png",
+      "url": "src/role/role_pile_1306.png",
       "en": "Augusta",
       "ko": "아우구스타",
       "zh": "奥古斯塔",
@@ -164,7 +164,7 @@
     },
     {
       "id": "1106",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1106.png",
+      "url": "src/role/role_pile_1106.png",
       "en": "Youhu",
       "ko": "유호",
       "zh": "釉瑚",
@@ -172,7 +172,7 @@
     },
     {
       "id": "1202",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1202.png",
+      "url": "src/role/role_pile_1202.png",
       "en": "Chixia",
       "ko": "치샤",
       "zh": "炽霞",
@@ -180,7 +180,7 @@
     },
     {
       "id": "1503",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1503.png",
+      "url": "src/role/role_pile_1503.png",
       "en": "Verina",
       "ko": "벨리나",
       "zh": "维里奈",
@@ -188,7 +188,7 @@
     },
     {
       "id": "1409",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1409.png",
+      "url": "src/role/role_pile_1409.png",
       "en": "Cartethyia",
       "ko": "카르티시아",
       "zh": "卡提希娅",
@@ -196,7 +196,7 @@
     },
     {
       "id": "1606",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1606.png",
+      "url": "src/role/role_pile_1606.png",
       "en": "Roccia",
       "ko": "로코코",
       "zh": "洛可可",
@@ -204,7 +204,7 @@
     },
     {
       "id": "1102",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1102.png",
+      "url": "src/role/role_pile_1102.png",
       "en": "Sanhua",
       "ko": "산화",
       "zh": "散华",
@@ -212,7 +212,7 @@
     },
     {
       "id": "1301",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1301.png",
+      "url": "src/role/role_pile_1301.png",
       "en": "Calcharo",
       "ko": "카카루",
       "zh": "卡卡罗",
@@ -220,7 +220,7 @@
     },
     {
       "id": "1403",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1403.png",
+      "url": "src/role/role_pile_1403.png",
       "en": "Aalto",
       "ko": "알토",
       "zh": "秋水",
@@ -228,7 +228,7 @@
     },
     {
       "id": "1601",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1601.png",
+      "url": "src/role/role_pile_1601.png",
       "en": "Taoqi",
       "ko": "도기",
       "zh": "桃祈",
@@ -236,7 +236,7 @@
     },
     {
       "id": "1602",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1602.png",
+      "url": "src/role/role_pile_1602.png",
       "en": "Danjin",
       "ko": "단근",
       "zh": "丹瑾",
@@ -244,7 +244,7 @@
     },
     {
       "id": "1305",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1305.png",
+      "url": "src/role/role_pile_1305.png",
       "en": "Xiangli Yao",
       "ko": "상리요",
       "zh": "相里要",
@@ -252,7 +252,7 @@
     },
     {
       "id": "1206",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1206.png",
+      "url": "src/role/role_pile_1206.png",
       "en": "Brant",
       "ko": "브렌트",
       "zh": "布兰特",
@@ -260,7 +260,7 @@
     },
     {
       "id": "1204",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1204.png",
+      "url": "src/role/role_pile_1204.png",
       "en": "Mortefi",
       "ko": "모르테피",
       "zh": "莫特斐",
@@ -268,7 +268,7 @@
     },
     {
       "id": "1107",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1107.png",
+      "url": "src/role/role_pile_1107.png",
       "en": "Carlotta",
       "ko": "카를로타",
       "zh": "珂莱塔",
@@ -276,7 +276,7 @@
     },
     {
       "id": "1504",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1504.png",
+      "url": "src/role/role_pile_1504.png",
       "en": "Lumi",
       "ko": "루미",
       "zh": "灯灯",
@@ -284,7 +284,7 @@
     },
     {
       "id": "1603",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1603.png",
+      "url": "src/role/role_pile_1603.png",
       "en": "Camellya",
       "ko": "카멜리아",
       "zh": "椿",
@@ -292,7 +292,7 @@
     },
     {
       "id": "1404",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1404.png",
+      "url": "src/role/role_pile_1404.png",
       "en": "Jiyan",
       "ko": "기염",
       "zh": "忌炎",
@@ -300,7 +300,7 @@
     },
     {
       "id": "1402",
-      "url": "https://raw.githubusercontent.com/MoonShadow1976/WutheringWaves_Character_Selection/main/role/role_pile_1402.png",
+      "url": "src/role/role_pile_1402.png",
       "en": "Yangyang",
       "ko": "양양",
       "zh": "秧秧",
