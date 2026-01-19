@@ -1,7 +1,7 @@
 {
   "status": 200,
   "info": "Wuthering Waves Role Data",
-  "timestamp": "2026-01-12T01:24:16.656170+00:00",
+  "timestamp": "2026-01-19T01:25:11.333765+00:00",
   "data": [
     {
       "id": "1408",
@@ -83,6 +83,15 @@
       "ko": "복링",
       "zh": "卜灵",
       "ja": "卜霊"
+    },
+    {
+      "id": "1210",
+      "url": "src/role/role_pile_1210.png",
+      "en": "Stay tuned",
+      "nickname": "Stay tuned",
+      "ko": "Stay tuned",
+      "zh": "爱弥斯",
+      "ja": "Stay tuned"
     },
     {
       "id": "1304",
@@ -209,6 +218,15 @@
       "ko": "설지",
       "zh": "白芷",
       "ja": "白芷"
+    },
+    {
+      "id": "1510",
+      "url": "src/role/role_pile_1510.png",
+      "en": "Stay tuned",
+      "nickname": "Windborne Rider",
+      "ko": "Stay tuned",
+      "zh": "陆·赫斯",
+      "ja": "Stay tuned"
     },
     {
       "id": "1306",
