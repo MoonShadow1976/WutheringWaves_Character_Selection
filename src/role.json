@@ -1,7 +1,7 @@
 {
   "status": 200,
   "info": "Wuthering Waves Role Data",
-  "timestamp": "2026-01-19T01:25:11.333765+00:00",
+  "timestamp": "2026-01-26T01:27:26.987123+00:00",
   "data": [
     {
       "id": "1408",
@@ -87,11 +87,11 @@
     {
       "id": "1210",
       "url": "src/role/role_pile_1210.png",
-      "en": "Stay tuned",
-      "nickname": "Stay tuned",
-      "ko": "Stay tuned",
+      "en": "Aemeath",
+      "nickname": "Aemeath",
+      "ko": "에이메스",
       "zh": "爱弥斯",
-      "ja": "Stay tuned"
+      "ja": "エイメス"
     },
     {
       "id": "1304",
@@ -222,11 +222,11 @@
     {
       "id": "1510",
       "url": "src/role/role_pile_1510.png",
-      "en": "Stay tuned",
+      "en": "Luuk Herssen",
       "nickname": "Windborne Rider",
-      "ko": "Stay tuned",
+      "ko": "루크 · 헤르센",
       "zh": "陆·赫斯",
-      "ja": "Stay tuned"
+      "ja": "リューク・ヘルセン"
     },
     {
       "id": "1306",

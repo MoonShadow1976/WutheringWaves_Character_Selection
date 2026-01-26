@@ -122,12 +122,12 @@
     "rank": 5,
     "weapon": 2,
     "element": 2,
-    "en": "Stay tuned",
-    "nickname": "Stay tuned",
+    "en": "Aemeath",
+    "nickname": "Aemeath",
     "desc": "Stay tuned",
-    "ko": "Stay tuned",
+    "ko": "에이메스",
     "zh-Hans": "爱弥斯",
-    "ja": "Stay tuned"
+    "ja": "エイメス"
   },
   "1304": {
     "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_24_UI.T_IconRoleHead256_24_UI",
@@ -317,12 +317,12 @@
     "rank": 5,
     "weapon": 4,
     "element": 5,
-    "en": "Stay tuned",
+    "en": "Luuk Herssen",
     "nickname": "Windborne Rider",
     "desc": "Jiyan, leader of the <te href=850086>Midnight Rangers</te>, acts with swift and resolute righteousness. He possesses the formidable ability to conjure a powerful Qingloong from the winds, making him invincible on the battlefield.",
-    "ko": "Stay tuned",
+    "ko": "루크 · 헤르센",
     "zh-Hans": "陆·赫斯",
-    "ja": "Stay tuned"
+    "ja": "リューク・ヘルセン"
   },
   "1306": {
     "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_51_UI.T_IconRoleHead256_51_UI",
