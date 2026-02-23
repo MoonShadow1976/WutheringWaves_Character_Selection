@@ -86,19 +86,19 @@
         
         .grid-item {
             background: white;
-            padding: 15px;
+            padding: 4px;
             text-align: center;
-            min-height: 180px;
+            min-height: 250px;
             display: flex;
             flex-direction: column;
         }
         
         .grid-title {
             font-size: 1.2rem;
-            margin-bottom: 15px;
+            margin-bottom: 4px;
             color: #2c3e50;
             font-weight: bold;
-            height: 40px;
+            height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -155,7 +155,7 @@
         
         .character-image {
             max-width: 100%;
-            max-height: 120px;
+            max-height: 200px;
             object-fit: contain;
         }
         
@@ -304,7 +304,7 @@
         
         @media (max-width: 768px) {
             .grid-container {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
             
             h1 {
@@ -838,6 +838,10 @@
         }
         
         function generateImage() {
+            const containers = document.querySelectorAll('.character-container');
+            // 临时移除边框
+            containers.forEach(container => container.style.border = 'none');
+
             // 使用html2canvas生成图片
             html2canvas(document.getElementById('characterGrid'), {
                 backgroundColor: '#ffffff',
@@ -845,6 +849,8 @@
                 useCORS: true, // 允许加载跨域图片
                 allowTaint: true // 允许加载跨域图片
             }).then(canvas => {
+                // 恢复边框
+                containers.forEach(container => container.style.border = '');
                 const resultCanvas = document.getElementById('resultCanvas');
                 resultCanvas.width = canvas.width;
                 resultCanvas.height = canvas.height;
@@ -862,6 +868,7 @@
                 // 滚动到结果区域
                 document.getElementById('resultContainer').scrollIntoView({ behavior: 'smooth' });
             }).catch(error => {
+                containers.forEach(container => container.style.border = '');
                 console.error('Error generating image:', error);
                 alert('生成图片时出错，请确保所有图片已正确加载。');
             });
