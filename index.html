@@ -88,9 +88,11 @@
             background: white;
             padding: 4px;
             text-align: center;
-            min-height: 250px;
             display: flex;
             flex-direction: column;
+            aspect-ratio: 2 / 3;
+            box-sizing: border-box;
+            overflow: hidden;
         }
         
         .grid-title {
@@ -130,7 +132,9 @@
         }
         
         .character-container {
-            flex-grow: 1;
+            flex-grow: 1 1 0;
+            min-height: 0;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -154,8 +158,11 @@
         }
         
         .character-image {
+            display: block;
             max-width: 100%;
-            max-height: 200px;
+            max-height: 100%;
+            width: auto;
+            height: auto;
             object-fit: contain;
         }
         
@@ -306,17 +313,17 @@
             .grid-container {
                 grid-template-columns: repeat(3, 1fr);
             }
-            
             h1 {
                 font-size: 2rem;
             }
-            
             .grid-title {
                 font-size: 1rem;
             }
-            
             .button-container {
                 flex-direction: column;
+            }
+            .grid-item {
+                padding: 2px;
             }
         }
         
