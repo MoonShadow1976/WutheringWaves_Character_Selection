@@ -1,7 +1,7 @@
 {
   "status": 200,
   "info": "Wuthering Waves Role Data",
-  "timestamp": "2025-12-29T05:29:43.980870+00:00",
+  "timestamp": "2026-02-09T01:52:20.604293+00:00",
   "data": [
     {
       "id": "1408",
@@ -83,6 +83,15 @@
       "ko": "복링",
       "zh": "卜灵",
       "ja": "卜霊"
+    },
+    {
+      "id": "1210",
+      "url": "src/role/role_pile_1210.png",
+      "en": "Aemeath",
+      "nickname": "Aemeath",
+      "ko": "에이메스",
+      "zh": "爱弥斯",
+      "ja": "エイメス"
     },
     {
       "id": "1304",
@@ -209,6 +218,15 @@
       "ko": "설지",
       "zh": "白芷",
       "ja": "白芷"
+    },
+    {
+      "id": "1510",
+      "url": "src/role/role_pile_1510.png",
+      "en": "Luuk Herssen",
+      "nickname": "Luuk Herssen",
+      "ko": "루크 · 헤르센",
+      "zh": "陆·赫斯",
+      "ja": "リューク・ヘルセン"
     },
     {
       "id": "1306",
