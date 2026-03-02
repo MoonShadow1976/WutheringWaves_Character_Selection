@@ -1,349 +1,356 @@
 {
   "1102": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_shanhua_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_shanhua_UI.webp",
     "en": "Sanhua",
     "zh-Hans": "散华",
     "ja": "散華",
     "ko": "산화"
   },
   "1103": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_bailian_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_bailian_UI.webp",
     "en": "Baizhi",
     "zh-Hans": "白芷",
     "ja": "白芷",
     "ko": "설지"
   },
   "1104": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lingyang_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lingyang_UI.webp",
     "en": "Lingyang",
     "zh-Hans": "凌阳",
     "ja": "凌陽",
     "ko": "능양"
   },
   "1105": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhezhi_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhezhi_UI.webp",
     "en": "Zhezhi",
     "zh-Hans": "折枝",
     "ja": "折枝",
     "ko": "절지"
   },
   "1106": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Youhu_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Youhu_UI.webp",
     "en": "Youhu",
     "zh-Hans": "釉瑚",
     "ja": "釉瑚",
     "ko": "유호"
   },
   "1107": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kelaita_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kelaita_UI.webp",
     "en": "Carlotta",
     "zh-Hans": "珂莱塔",
     "ja": "カルロッタ",
     "ko": "카를로타"
   },
   "1202": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_maxiaofang_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_maxiaofang_UI.webp",
     "en": "Chixia",
     "zh-Hans": "炽霞",
     "ja": "熾霞",
     "ko": "치샤"
   },
   "1203": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_anke_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_anke_UI.webp",
     "en": "Encore",
     "zh-Hans": "安可",
     "ja": "アンコ",
     "ko": "앙코"
   },
   "1204": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_baer_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_baer_UI.webp",
     "en": "Mortefi",
     "zh-Hans": "莫特斐",
     "ja": "モルトフィー",
     "ko": "모르테피"
   },
   "1205": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_changli_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_changli_UI.webp",
     "en": "Changli",
     "zh-Hans": "长离",
     "ja": "長離",
     "ko": "장리"
   },
   "1206": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Bulante_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Bulante_UI.webp",
     "en": "Brant",
     "zh-Hans": "布兰特",
     "ja": "ブラント",
     "ko": "브렌트"
   },
   "1207": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lupa_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lupa_UI.webp",
     "en": "Lupa",
     "zh-Hans": "露帕",
     "ja": "ルパ",
     "ko": "루파"
   },
   "1208": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiabeilina_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiabeilina_UI.webp",
     "en": "Galbrena",
     "zh-Hans": "嘉贝莉娜",
     "ja": "ガルブレーナ",
     "ko": "갈브레나"
   },
   "1209": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Moning_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Moning_UI.webp",
     "en": "Mornye",
     "zh-Hans": "莫宁",
     "ja": "モーニエ",
     "ko": "모니에"
   },
   "1210": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Aimisi_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Aimisi_UI.webp",
     "en": "Aemeath",
     "zh-Hans": "爱弥斯",
     "ja": "エイメス",
     "ko": "에이메스"
   },
   "1301": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kakaluo_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kakaluo_UI.webp",
     "en": "Calcharo",
     "zh-Hans": "卡卡罗",
     "ja": "カカロ",
     "ko": "카카루"
   },
   "1302": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yinlin_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yinlin_UI.webp",
     "en": "Yinlin",
     "zh-Hans": "吟霖",
     "ja": "吟霖",
     "ko": "음림"
   },
   "1303": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yuanwu_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yuanwu_UI.webp",
     "en": "Yuanwu",
     "zh-Hans": "渊武",
     "ja": "淵武",
     "ko": "연무"
   },
   "1304": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jinxi_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jinxi_UI.webp",
     "en": "Jinhsi",
     "zh-Hans": "今汐",
     "ja": "今汐",
     "ko": "금희"
   },
   "1305": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xiangliyao_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xiangliyao_UI.webp",
     "en": "Xiangli Yao",
     "zh-Hans": "相里要",
     "ja": "相里要",
     "ko": "상리요"
   },
   "1306": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_aogusita_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_aogusita_UI.webp",
     "en": "Augusta",
     "zh-Hans": "奥古斯塔",
     "ja": "オーガスタ",
     "ko": "아우구스타"
   },
   "1307": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Buling_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Buling_UI.webp",
     "en": "Buling",
     "zh-Hans": "卜灵",
     "ja": "卜霊",
     "ko": "복링"
   },
   "1402": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yangyang_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yangyang_UI.webp",
     "en": "Yangyang",
     "zh-Hans": "秧秧",
     "ja": "秧秧",
     "ko": "양양"
   },
   "1403": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_qiushui_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_qiushui_UI.webp",
     "en": "Aalto",
     "zh-Hans": "秋水",
     "ja": "アールト",
     "ko": "알토"
   },
   "1404": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiyan_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiyan_UI.webp",
     "en": "Jiyan",
     "zh-Hans": "忌炎",
     "ja": "忌炎",
     "ko": "기염"
   },
   "1405": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiexin_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiexin_UI.webp",
     "en": "Jianxin",
     "zh-Hans": "鉴心",
     "ja": "鑑心",
     "ko": "감심"
   },
   "1406": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
     "en": "Rover: Aero",
     "zh-Hans": "漂泊者·气动",
     "ja": "漂泊者・気動",
     "ko": "방랑자 · 기류"
   },
   "1407": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xiakong_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xiakong_UI.webp",
     "en": "Ciaccona",
     "zh-Hans": "夏空",
     "ja": "シャコンヌ",
     "ko": "샤콘"
   },
   "1408": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.webp",
     "en": "Rover: Aero",
     "zh-Hans": "漂泊者·气动",
     "ja": "漂泊者・気動",
     "ko": "방랑자 · 기류"
   },
   "1409": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_katixiya_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_katixiya_UI.webp",
     "en": "Cartethyia",
     "zh-Hans": "卡提希娅",
     "ja": "カルテジア",
     "ko": "카르티시아"
   },
   "1410": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_younuo_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_younuo_UI.webp",
     "en": "Iuno",
     "zh-Hans": "尤诺",
     "ja": "ユーノ",
     "ko": "유노"
   },
   "1411": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Qiuyuan_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Qiuyuan_UI.webp",
     "en": "Qiuyuan",
     "zh-Hans": "仇远",
     "ja": "仇遠",
     "ko": "구원"
   },
+  "1412": {
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xigelika_UI.webp",
+    "en": "Sigrika",
+    "zh-Hans": "西格莉卡",
+    "ja": "シグリカ",
+    "ko": "시그리카"
+  },
   "1501": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
     "en": "Rover: Spectro",
     "zh-Hans": "漂泊者·衍射",
     "ja": "漂泊者・回折",
     "ko": "방랑자 · 회절"
   },
   "1502": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.webp",
     "en": "Rover: Spectro",
     "zh-Hans": "漂泊者·衍射",
     "ja": "漂泊者・回折",
     "ko": "방랑자"
   },
   "1503": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jueyuan_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jueyuan_UI.webp",
     "en": "Verina",
     "zh-Hans": "维里奈",
     "ja": "ヴェリーナ",
     "ko": "벨리나"
   },
   "1504": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_dengdeng_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_dengdeng_UI.webp",
     "en": "Lumi",
     "zh-Hans": "灯灯",
     "ja": "灯灯",
     "ko": "루미"
   },
   "1505": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Shouanren_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Shouanren_UI.webp",
     "en": "Shorekeeper",
     "zh-Hans": "守岸人",
     "ja": "ショアキーパー",
     "ko": "파수인"
   },
   "1506": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Feibi_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Feibi_UI.webp",
     "en": "Phoebe",
     "zh-Hans": "菲比",
     "ja": "フィービー",
     "ko": "페비"
   },
   "1507": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zanni_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zanni_UI.webp",
     "en": "Zani",
     "zh-Hans": "赞妮",
     "ja": "ザンニー",
     "ko": "젠니"
   },
   "1508": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Qianxiao_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Qianxiao_UI.webp",
     "en": "Chisa",
     "zh-Hans": "千咲",
     "ja": "千咲",
     "ko": "치사"
   },
   "1509": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Linnai_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Linnai_UI.webp",
     "en": "Lynae",
     "zh-Hans": "琳奈",
     "ja": "リンネー",
     "ko": "린네"
   },
   "1510": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Luhesi_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Luhesi_UI.webp",
     "en": "Luuk Herssen",
     "zh-Hans": "陆·赫斯",
     "ja": "リューク・ヘルセン",
     "ko": "루크 · 헤르센"
   },
   "1601": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_taohua_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_taohua_UI.webp",
     "en": "Taoqi",
     "zh-Hans": "桃祈",
     "ja": "桃祈",
     "ko": "도기"
   },
   "1602": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_micai_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_micai_UI.webp",
     "en": "Danjin",
     "zh-Hans": "丹瑾",
     "ja": "丹瑾",
     "ko": "단근"
   },
   "1603": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_chun_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_chun_UI.webp",
     "en": "Camellya",
     "zh-Hans": "椿",
     "ja": "ツバキ",
     "ko": "카멜리아"
   },
   "1604": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.webp",
     "en": "Rover: Havoc",
     "zh-Hans": "漂泊者·湮灭",
     "ja": "漂泊者・消滅",
     "ko": "방랑자 · 인멸"
   },
   "1605": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
     "en": "Rover: Havoc",
     "zh-Hans": "漂泊者·湮灭",
     "ja": "漂泊者・消滅",
     "ko": "방랑자 · 인멸"
   },
   "1606": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luokeke_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luokeke_UI.webp",
     "en": "Roccia",
     "zh-Hans": "洛可可",
     "ja": "ロココ",
     "ko": "로코코"
   },
   "1607": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kanteleila_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kanteleila_UI.webp",
     "en": "Cantarella",
     "zh-Hans": "坎特蕾拉",
     "ja": "カンタレラ",
     "ko": "칸타렐라"
   },
   "1608": {
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_fuluoluo_UI.png",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_fuluoluo_UI.webp",
     "en": "Phrolova",
     "zh-Hans": "弗洛洛",
     "ja": "フローヴァ",
